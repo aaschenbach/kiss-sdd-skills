@@ -33,9 +33,30 @@ Collection of AI skills that automate the product lifecycle (Discovery -> Archit
 
 ## Installation
 
-You can install the skills by cloning the repository (Git) or by downloading the files manually.
+You can install the skills by cloning the repository (Git), npm or by downloading the files manually.
 
-### Option A: Via Git (Recommended)
+### Option A: Via npm (Simplest)
+
+Install automatically using the CLI:
+
+```bash
+npx kiss-sdd-skills install codex
+```
+
+Or for Gemini:
+
+```bash
+npx kiss-sdd-skills install gemini
+```
+
+You can also install it globally:
+
+```bash
+npm install -g kiss-sdd-skills
+kiss-sdd-skills install codex
+```
+
+### Option B: Via Git (Recommended for development)
 
 1. **Clone the repository:**
    ```bash

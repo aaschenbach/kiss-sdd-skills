@@ -33,9 +33,30 @@ Coleção de skills para IA que automatizam o ciclo de vida de produto (Discover
 
 ## Instalação
 
-Você pode instalar as skills via clonagem de repositório (Git) ou baixando os arquivos manualmente.
+Você pode instalar as skills via clonagem de repositório (Git), npm ou baixando os arquivos manualmente.
 
-### Opção A: Via Git (Recomendado)
+### Opção A: Via npm (Mais simples)
+
+Instale automaticamente usando o CLI:
+
+```bash
+npx kiss-sdd-skills install codex
+```
+
+Ou para gemini:
+
+```bash
+npx kiss-sdd-skills install gemini
+```
+
+Também é possível instalar globalmente:
+
+```bash
+npm install -g kiss-sdd-skills
+kiss-sdd-skills install codex
+```
+
+### Opção B: Via Git (Recomendado para desenvolvimento)
 
 1. **Clone o repositório:**
    ```bash
@@ -63,7 +84,7 @@ Você pode instalar as skills via clonagem de repositório (Git) ou baixando os 
    mkdir -p ~/.gemini/skills && cp -R ./skills/* ~/.gemini/skills/
    ```
 
-### Opção B: Download ZIP (Manual)
+### Opção C: Download ZIP (Manual)
 
 1. Baixe o código-fonte em formato **[ZIP](https://github.com/alexandre-aschenbach/kiss-sdd-skills/archive/refs/heads/main.zip)**.
 2. Extraia o conteúdo para uma pasta temporária.
