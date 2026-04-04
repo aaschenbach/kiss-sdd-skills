@@ -1,42 +1,85 @@
-# AGENTS
+# AGENTS.md
 
-Guia operacional para manutencao deste repositorio de skills.
+Instrucoes para agentes que trabalham neste repositorio.
 
-## Escopo
+## Sobre o repositorio
 
-- Este repositorio concentra skills de produto, arquitetura, backlog, detalhamento e execucao para uso no Codex.
-- Mudancas em qualquer skill devem preservar consistencia entre `SKILL.md`, referencias associadas e documentacao raiz.
+- Este repositorio mantem skills do ecossistema KISS para discovery, arquitetura, backlog, detalhamento, execucao e orquestracao.
+- O codigo-fonte principal fica em `skills/`.
+- A documentacao raiz relevante fica em `README.md`, `README.en.md`, `CHANGELOG.md`, `CLAUDE.md`, `GEMINI.md` e neste arquivo.
 
-## Regras de Atualizacao
+## Estrutura esperada das skills
 
-- Atualize `README.md` quando a mudanca afetar fluxo, uso, convencoes, instalacao, artefatos ou expectativas de handoff.
-- Atualize este `AGENTS.md` quando a mudanca afetar regras operacionais transversais, responsabilidades, guardrails de manutencao ou convencoes para agentes.
-- **Multi-Plataforma:** Mantenha sempre a paridade entre `agents/openai.yaml` e `agents/gemini.yaml` em cada skill.
-- Se um novo requisito transversal surgir, propague-o para todas as skills impactadas e para os templates ou referencias relevantes.
-- Para mudancas relevantes, sincronize com `main`, trabalhe em branch dedicada e preserve o merge para PR em vez de commit direto recorrente em `main`.
+Cada skill publicada neste repositorio deve:
 
-## Validacao Minima
+- usar o prefixo `kiss-` no nome da pasta;
+- usar o mesmo nome da pasta no campo `name` do `SKILL.md`;
+- manter `agents/openai.yaml` e `agents/gemini.yaml` em paridade;
+- manter referencias e templates coerentes com o `SKILL.md`.
 
-- Validar os skills alterados com `quick_validate.py`.
-- Revisar diffs para garantir consistencia entre skills, templates e `README.md`.
-- Quando aplicavel, confirmar que os artefatos instruem validacao antes da proxima fase e sugerem mensagens de commit.
-- Confirmar que as instrucoes de branch, `pull`, commit e PR estao coerentes com o fluxo minimo do repositorio.
-- Confirmar que todo skill publicado por este repositorio usa o prefixo canonico `kiss-` tanto no nome da pasta quanto no campo `name` do `SKILL.md`.
-- Quando houver acompanhamento operacional, confirmar consistencia entre backlog consolidado, `kanban.md` e relatorio de execucao por item.
-- Quando houver skill de marca ou marketing, confirmar que cada entregavel relevante apresenta multiplas opcoes reais e comparaveis, em vez de proposta unica fechada.
-- Confirmar que mensagens de commit sugeridas seguem o mesmo idioma principal definido para sistema e documentacao, salvo instrucao explicita em contrario.
+Estrutura tipica:
 
-## Convencoes Transversais
+- `skills/<kiss-skill>/SKILL.md`
+- `skills/<kiss-skill>/agents/openai.yaml`
+- `skills/<kiss-skill>/agents/gemini.yaml`
+- `skills/<kiss-skill>/references/`
 
-- Todos os skills publicados por este repositorio devem usar o prefixo `kiss-`.
-- A lingua principal do sistema e da documentacao deve ser definida cedo e propagada entre as fases.
-- Mensagens de commit sugeridas devem seguir a mesma lingua principal adotada na documentacao e nos artefatos do projeto, salvo instrucao explicita em contrario.
-- Etapas opcionais de marca e marketing devem complementar o PRD sem bloquear arquitetura, backlog, detalhamento ou execucao.
-- Skills de marca e marketing devem entregar sempre mais de uma opcao por modulo relevante, como posicionamento, pitch, tagline, logo e paleta.
-- Identificadores de item devem usar o padrao `FXXTYY-slug-do-item`, com fase estavel e numeracao unica dentro da fase.
-- O acompanhamento operacional deve usar `dev-docs/03-backlog/kanban.md` como board simples de status, com estados `todo | ready | in_progress | blocked | review | done`.
-- Cada fase deve orientar atualizacao de `AGENTS.md` e `README.md` quando necessario.
-- Cada fase deve orientar validacao de artefatos e testes antes do proximo handoff.
-- Cada fase deve sugerir mensagens de commit ao encerrar.
-- Antes de iniciar nova frente relevante, orientar sincronizacao com `main` via `git pull`.
-- Quando a mudanca for relevante, orientar branch dedicada e PR para `main`.
+## Fluxo do produto refletido nas skills
+
+O repositorio representa este fluxo:
+
+1. `kiss-estrategista-de-produto`
+2. `kiss-posicionamento-de-marca` opcional
+3. `kiss-arquiteto-de-sistemas`
+4. `kiss-backlog-de-produto`
+5. `kiss-detalhador-de-tarefas`
+6. `kiss-executor-de-entrega`
+7. `kiss-orquestrador-de-produto` como coordenador do fluxo ponta a ponta
+
+Ao alterar uma skill, preserve compatibilidade com esse encadeamento.
+
+## Convencoes transversais
+
+- A lingua principal do sistema e da documentacao deve ser definida cedo e propagada entre fases, artefatos e mensagens de commit sugeridas.
+- Skills de marca e marketing devem sempre oferecer multiplas opcoes reais e comparaveis, nunca uma unica proposta fechada.
+- Etapas de marca e marketing complementam o PRD e nao devem bloquear arquitetura, backlog, detalhamento ou execucao.
+- Identificadores de item seguem o padrao `FXXTYY-slug-do-item`.
+- O board operacional padrao fica em `dev-docs/03-backlog/kanban.md`.
+- Os estados aceitos no kanban sao `todo | ready | in_progress | blocked | review | done`.
+- Cada fase deve orientar validacao antes do proximo handoff.
+- Cada fase deve sugerir mensagem de commit ao encerrar.
+
+## Regras de manutencao
+
+- Atualize `README.md` e `README.en.md` quando a mudanca afetar fluxo, instalacao, uso, convencoes, artefatos ou handoff.
+- Atualize este `AGENTS.md` quando a mudanca alterar regras operacionais, guardrails, responsabilidades ou convencoes transversais.
+- Se surgir um requisito transversal novo, propague-o para todas as skills, referencias e templates impactados.
+- Nao deixe divergencia entre `openai.yaml` e `gemini.yaml`.
+- Nao altere apenas uma etapa do fluxo se isso quebrar a continuidade das etapas seguintes.
+
+## Fluxo de Git esperado
+
+- Antes de iniciar uma frente relevante, sincronize com `main` via `git pull`.
+- Para mudancas relevantes, trabalhe em branch dedicada.
+- Prefira abrir PR para `main` em vez de acumular alteracoes diretamente em `main`.
+- Ao concluir, revise os diffs antes de propor commit.
+
+## Validacao minima
+
+Sempre que alterar skills ou convencoes relacionadas:
+
+1. Rode `python quick_validate.py`.
+2. Revise o diff para conferir consistencia entre `SKILL.md`, referencias, YAMLs e documentacao raiz.
+3. Confirme que nomes de pasta e campo `name` seguem o prefixo `kiss-`.
+4. Confirme que instrucoes de branch, `pull`, commit e PR continuam coerentes com o fluxo minimo do repositorio.
+5. Quando houver backlog operacional, confirme consistencia entre backlog consolidado, `kanban.md` e relatorios `.execution.md`.
+
+## Checklist rapido para agentes
+
+Antes de encerrar uma mudanca, confirme:
+
+- a skill alterada continua consistente internamente;
+- a documentacao raiz foi atualizada se necessario;
+- a paridade multi-plataforma foi preservada;
+- a validacao minima foi executada;
+- a resposta final inclui proximo passo ou mensagem de commit sugerida quando aplicavel.

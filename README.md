@@ -4,6 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Codex](https://img.shields.io/badge/Codex-Compatible-brightgreen)](https://github.com/google/codex)
 [![Gemini](https://img.shields.io/badge/Gemini-Compatible-orange)](https://github.com/google/gemini-cli)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-blueviolet)](https://claude.ai/code)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -24,11 +25,11 @@ Coleção de skills para IA que automatizam o ciclo de vida de produto (Discover
 ## Tecnologias
 
 - **Linguagens:** Markdown (Instruções), Python (Validação), YAML (Configuração).
-- **Ferramentas:** Otimizado para [Codex](https://github.com/google/codex) e [Gemini CLI](https://github.com/google/gemini-cli).
+- **Ferramentas:** Otimizado para [Codex](https://github.com/google/codex), [Gemini CLI](https://github.com/google/gemini-cli) e [Claude Code](https://claude.ai/code).
 
 ## Pré-requisitos
 
-- **Codex** ou **Gemini CLI** instalado e configurado localmente.
+- **Codex**, **Gemini CLI** ou **Claude Code** instalado e configurado localmente.
 - **Python 3.8+** (necessário apenas para o script de validação).
 
 ## Instalação
@@ -43,10 +44,22 @@ Instale automaticamente usando o CLI:
 npx kiss-sdd-skills install codex
 ```
 
-Ou para gemini:
+Ou para Gemini:
 
 ```bash
 npx kiss-sdd-skills install gemini
+```
+
+Ou para Claude Code:
+
+```bash
+npx kiss-sdd-skills install claude
+```
+
+Para instalar em todas as ferramentas de uma vez:
+
+```bash
+npx kiss-sdd-skills install all
 ```
 
 Também é possível instalar globalmente:
@@ -84,6 +97,8 @@ kiss-sdd-skills install codex
    mkdir -p ~/.gemini/skills && cp -R ./skills/* ~/.gemini/skills/
    ```
 
+   **Para Claude Code:** use o instalador npm (`npx kiss-sdd-skills install claude`), pois ele gera os arquivos de comando no formato correto para `~/.claude/commands/`.
+
 ### Opção C: Download ZIP (Manual)
 
 1. Baixe o código-fonte em formato **[ZIP](https://github.com/alexandre-aschenbach/kiss-sdd-skills/archive/refs/heads/main.zip)**.
@@ -91,6 +106,7 @@ kiss-sdd-skills install codex
 3. Copie o conteúdo da pasta `skills/` para o diretório de skills da sua ferramenta:
    - **Codex:** `%USERPROFILE%\.codex\skills\` (Windows) ou `~/.codex/skills/` (Unix).
    - **Gemini CLI:** `%USERPROFILE%\.gemini\skills\` (Windows) ou `~/.gemini/skills/` (Unix).
+   - **Claude Code:** use o instalador npm (`npx kiss-sdd-skills install claude`), pois ele gera os arquivos de comando no formato correto para `~/.claude/commands/`.
 
 ### Validar a Instalação
 Certifique-se de que a estrutura e os nomes das skills estão corretos:
@@ -100,7 +116,13 @@ python quick_validate.py
 
 ## Uso
 
-Ative as skills diretamente no seu terminal (Codex ou Gemini CLI) usando o prefixo `$kiss-`:
+Ative as skills diretamente no terminal usando o prefixo correspondente à sua ferramenta:
+
+| Ferramenta | Prefixo | Exemplo |
+|------------|---------|---------|
+| Codex | `$kiss-` | `$kiss-estrategista-de-produto` |
+| Gemini CLI | `$kiss-` | `$kiss-estrategista-de-produto` |
+| Claude Code | `/kiss-` | `/kiss-estrategista-de-produto` |
 
 ```text
 Use $kiss-estrategista-de-produto para transformar esta ideia em um PRD técnico.
