@@ -1,4 +1,4 @@
-# Codex Skills (KISS Edition)
+# K.I.S.S. SDD Skills
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -9,7 +9,7 @@
 
 [English Version (README.en.md)](README.en.md)
 
-Coleção de skills para o Codex que automatizam o ciclo de vida de produto (Discovery -> Arquitetura -> Execução) seguindo o princípio **KISS (Keep It Simple, Stupid)**.
+Coleção de skills para IA que automatizam o ciclo de vida de produto (Discovery -> Arquitetura -> Execução) seguindo o princípio **KISS (Keep It Simple, Stupid)**.
 
 ## Funcionalidades
 
@@ -39,8 +39,8 @@ Você pode instalar as skills via clonagem de repositório (Git) ou baixando os 
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/alexandre-aschenbach/codex-skills.git
-   cd codex-skills
+   git clone https://github.com/alexandre-aschenbach/kiss-sdd-skills.git
+   cd kiss-sdd-skills
    ```
 
 2. **Execute o script de cópia:**
@@ -65,7 +65,7 @@ Você pode instalar as skills via clonagem de repositório (Git) ou baixando os 
 
 ### Opção B: Download ZIP (Manual)
 
-1. Baixe o código-fonte em formato **[ZIP](https://github.com/alexandre-aschenbach/codex-skills/archive/refs/heads/main.zip)**.
+1. Baixe o código-fonte em formato **[ZIP](https://github.com/alexandre-aschenbach/kiss-sdd-skills/archive/refs/heads/main.zip)**.
 2. Extraia o conteúdo para uma pasta temporária.
 3. Copie o conteúdo da pasta `skills/` para o diretório de skills da sua ferramenta:
    - **Codex:** `%USERPROFILE%\.codex\skills\` (Windows) ou `~/.codex/skills/` (Unix).
