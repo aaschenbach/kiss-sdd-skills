@@ -1,0 +1,4 @@
+interface:
+  display_name: "Backlog de Produto"
+  short_description: "Transforma PRD em backlog priorizado"
+  default_prompt: "Use $kiss-backlog-de-produto para transformar PRD e arquitetura em backlog priorizado, com epicos, historias, enablers e dependencias."

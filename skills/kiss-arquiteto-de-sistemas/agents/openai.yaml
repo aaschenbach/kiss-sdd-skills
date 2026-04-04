@@ -1,0 +1,4 @@
+interface:
+  display_name: "Arquiteto de Sistemas"
+  short_description: "Leva PRD a arquitetura tecnica"
+  default_prompt: "Use $kiss-arquiteto-de-sistemas para transformar um PRD em arquitetura tecnica, stack, APIs, integracoes e plano de implementacao."

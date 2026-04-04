@@ -1,0 +1,4 @@
+interface:
+  display_name: "Posicionamento de Marca"
+  short_description: "Transforma PRD em opcoes de marca"
+  default_prompt: "Use $kiss-posicionamento-de-marca para transformar este PRD em um documento com opcoes de posicionamento, pitch, tagline, logo e paleta."

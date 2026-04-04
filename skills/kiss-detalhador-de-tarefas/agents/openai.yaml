@@ -1,0 +1,4 @@
+interface:
+  display_name: "Detalhador de Tarefas"
+  short_description: "Quebra backlog em trabalho tecnico"
+  default_prompt: "Use $kiss-detalhador-de-tarefas para decompor um item de backlog em tarefas tecnicas, dependencias, testes e DoD."

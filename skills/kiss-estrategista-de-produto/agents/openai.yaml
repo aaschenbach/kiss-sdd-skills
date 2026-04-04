@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estrategista de Produto"
+  short_description: "Leva descoberta ao PRD tecnico"
+  default_prompt: "Use $kiss-estrategista-de-produto para conduzir a descoberta de um novo produto e produzir um PRD tecnico detalhado."

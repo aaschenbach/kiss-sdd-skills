@@ -1,0 +1,4 @@
+interface:
+  display_name: "Executor de Entrega"
+  short_description: "Executa tarefas com validacao"
+  default_prompt: "Use $kiss-executor-de-entrega para implementar uma tarefa de entrega com base no PRD, arquitetura, backlog, detalhamento e relatorio de execucao."
