@@ -43,12 +43,14 @@ Regra padrao:
 - valide antes de seguir
 - atualize o relatorio apos cada tarefa
 
+Se o usuario nao especificar qual fase ou tarefa deve ser executada, apresente a sequencia sugerida, mais logica e adequada com base no progresso atual e dependencias, para que ele decida.
+
 Modos de execucao:
 - manual: o usuario indica a tarefa, como `T2`
 - guiado: execute a proxima tarefa desbloqueada
 - sequencial: execute varias tarefas em ordem, validando a cada etapa
 
-Se o usuario nao especificar o modo, use `guiado`.
+Se o usuario ja especificou um item de backlog mas nao o modo, use `guiado`.
 
 ## Workflow
 

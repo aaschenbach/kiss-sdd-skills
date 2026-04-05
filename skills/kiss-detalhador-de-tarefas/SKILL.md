@@ -32,6 +32,8 @@ Crie os artefatos desta etapa, por padrao, em `dev-docs/04-tarefas/` na raiz do 
 
 Confirme se o item de backlog esta suficientemente definido para ser quebrado em tarefas.
 
+Se o usuario nao informar qual fase ou tarefa do backlog deve ser detalhada, apresente a sequencia sugerida, mais logica e adequada com base no backlog ou kanban atual, para que ele decida por onde comecar.
+
 Cheque:
 - objetivo do item
 - criterio de aceite
