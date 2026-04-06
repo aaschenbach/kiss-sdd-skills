@@ -25,7 +25,8 @@ Ao finalizar, informe explicitamente ao usuario quais arquivos foram criados ou 
 - Preserve a lingua definida para sistema e documentacao tambem nos artefatos produzidos durante a execucao; se isso estiver ambiguo, registre a lacuna antes de seguir.
 - Siga essa mesma lingua ao sugerir mensagens de commit, salvo instrucao explicita em contrario.
 - Crie `AGENTS.md` na raiz do projeto se ele nao existir e mantenha `AGENTS.md` e `README.md` atualizados sempre que a implementacao alterar setup, execucao, ambiente, comandos, fluxos operacionais, troubleshooting ou convencoes relevantes para quem vai manter o projeto.
-- Antes de iniciar uma nova frente relevante, oriente sincronizar a `main` local com `git pull` e criar branch curta de trabalho; evite recomendar `pull` no meio de uma execucao em andamento.
+- Antes de iniciar uma nova frente relevante, verifique se o projeto utiliza controle de versionamento (Git); em caso positivo, **garanta** a sincronizacao da `main` local com `git pull` e a criacao de uma branch curta de trabalho (ex: `task/FXXTYY-slug`) para isolar as mudancas.
+- Se o Git nao estiver presente, ignore os passos de versionamento e siga com a execucao local direta.
 - Ao encerrar cada rodada ou pacote seguro de execucao, sugira mensagens de commit objetivas alinhadas ao que foi implementado.
 - Antes de seguir para a proxima tarefa ou fase, instrua o usuario a executar os testes e validacoes aplicaveis, ou valide voce mesmo quando estiver no escopo da execucao.
 
@@ -53,6 +54,15 @@ Modos de execucao:
 Se o usuario ja especificou um item de backlog mas nao o modo, use `guiado`.
 
 ## Workflow
+
+### 0. Preparar Git (Sync & Branch)
+
+Antes de qualquer acao, verifique se o ambiente utiliza Git (ex: `git rev-parse --is-inside-work-tree`).
+- Se houver Git:
+    - Sincronize com a branch principal (`git checkout main && git pull`).
+    - Crie ou mova para uma branch de trabalho (ex: `git checkout -b task/FXXTYY-slug`).
+- Se nao houver Git:
+    - Continue a execucao diretamente no sistema de arquivos local.
 
 ### 1. Validar os insumos
 
@@ -146,7 +156,12 @@ Ao fim de cada execucao, conclua com uma decisao explicita:
 - bloqueado
 - precisa refinar o item
 - precisa voltar para backlog ou arquitetura
-- pronto para commit e PR para `main`, quando o pacote estiver validado
+- **pronto para encerrar e abrir Pull Request**: quando o pacote de tarefas ou o item estiver validado e o ambiente usar Git.
+
+Se houver Git:
+- Confirme com o usuario se ele deseja abrir o Pull Request agora.
+- Se autorizado, ofereca-se para realizar a abertura do PR (se o GitHub CLI estiver disponivel) ou forneca o comando/orientacao necessario.
+- Em caso de execucao sequencial (múltiplas tarefas), o PR deve ser aberto apos a conclusao e validacao do conjunto completo.
 
 Mapeamento recomendado de status no `kanban.md`:
 - `in_progress` ao iniciar execucao
@@ -181,7 +196,8 @@ Use [execution-workflow.md](./references/execution-workflow.md) para decidir se 
 - Um relatorio acumulativo por item, no formato `FXXTYY-slug-do-item.execution.md`
 - Quando houver `kanban.md`, atualize-o junto com o relatorio de execucao
 - Crie `AGENTS.md` se estiver ausente e atualize `AGENTS.md` e `README.md` quando necessario, registrando isso no relatorio de execucao
-- Quando a mudanca for relevante, recomende sincronizar a `main` antes de iniciar a frente, trabalhar em branch dedicada e abrir PR para `main` apos validacao
+- Quando o Git for detectado, **garanta** a sincronizacao da `main` no inicio e o uso de branch dedicada.
+- Ao concluir a execucao em ambiente Git, abra Pull Request para `main` (se autorizado pelo usuario) apos a validacao final do item ou pacote de tarefas.
 - Ao concluir, deixe explicito quais testes e validacoes foram executados e quais ainda precisam ser rodados pelo usuario
 - Ao concluir, sugira mensagens de commit para codigo, documentacao e relatorio quando aplicavel
 - Ao concluir, sempre informe ao usuario onde os arquivos foram criados ou os nomes dos arquivos atualizados

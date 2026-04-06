@@ -4,13 +4,26 @@ Use este material para executar com seguranca a partir de um item detalhado.
 
 ## Sequencia recomendada
 
+0. Preparar Git (Sync & Branch)
 1. Validar insumos
 2. Escolher tarefa
 3. Confirmar dependencias
 4. Implementar
 5. Validar
 6. Atualizar relatorio
-7. Decidir o proximo passo
+7. Decidir o proximo passo / Abrir Pull Request
+
+## 0. Preparar Git (Sync & Branch)
+
+Verifique se o projeto utiliza Git (ex: `git rev-parse --is-inside-work-tree`).
+
+**Se houver Git:**
+1. Sincronize: `git checkout main && git pull`
+2. Prepare Branch: `git checkout -b task/FXXTYY-slug`
+   - Se estiver executando multiplas tarefas, use uma branch unica para o conjunto.
+
+**Se nao houver Git:**
+- Ignore este passo e continue a execucao local direta.
 
 ## 1. Validar insumos
 
@@ -79,7 +92,7 @@ Cada rodada deve registrar:
 - pendencias
 - licoes aprendidas
 
-## 7. Decidir o proximo passo
+## 7. Decidir o proximo passo / Abrir Pull Request
 
 Conclua sempre com uma destas saidas:
 - proxima tarefa liberada
@@ -87,8 +100,14 @@ Conclua sempre com uma destas saidas:
 - precisa revisar o plano
 - precisa voltar para backlog ou arquitetura
 
-Se a rodada encerrar implementacao aguardando validacao final, use `review` no board.
-Se o item estiver concluido e validado, use `done` no board.
+### Conclusao de Item ou Pacote (PR Workflow)
+
+Se a rodada encerrar a implementacao validada de um item ou conjunto de tarefas:
+1. Sincronize o board para `review` ou `done`.
+2. **Se houver Git:**
+    - Execute `git add .` e sugira mensagens de commit claras.
+    - **Apos confirmacao do usuario**, execute `git push` e abra o Pull Request para a `main`.
+    - Se o GitHub CLI (`gh`) estiver disponivel, ofereca-se para criar o PR automaticamente: `gh pr create --title "FXXTYY-slug-do-item" --body "Implementacao validada do item."`.
 
 ## Regra de ouro
 
