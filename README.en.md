@@ -10,7 +10,7 @@
 
 [Versão em Português (README.md)](README.md)
 
-Collection of AI skills that automate the product lifecycle (Discovery -> Architecture -> Execution) following the **KISS (Keep It Simple, Stupid)** principle.
+Collection of AI skills that automate the product lifecycle (Discovery -> Architecture -> Execution -> QA) following the **KISS (Keep It Simple, Stupid)** principle.
 
 ## Features
 
@@ -20,6 +20,7 @@ Collection of AI skills that automate the product lifecycle (Discovery -> Archit
 - **Backlog Management:** Creates and prioritizes epics, stories, and Kanban boards (`$kiss-backlog-de-produto`).
 - **Task Breakdown:** Decomposes stories into actionable technical tasks (`$kiss-detalhador-de-tarefas`).
 - **Delivery Execution:** Implements code with traceability and automated reports (`$kiss-executor-de-entrega`).
+- **Quality and QA:** Consolidates coverage and executable manual test scripts (`$kiss-especialista-de-qa`).
 - **Orchestration:** Coordinates the end-to-end flow between all skills (`$kiss-orquestrador-de-produto`).
 
 ## Technologies
@@ -138,6 +139,7 @@ The ideal lifecycle follows this sequence:
 4.  **Planning:** `$kiss-backlog-de-produto` -> Creates `backlog.md` and `kanban.md`.
 5.  **Refinement:** `$kiss-detalhador-de-tarefas` -> Creates `FXXTYY.md` breakdown files.
 6.  **Implementation:** `$kiss-executor-de-entrega` -> Executes tasks and generates `.execution.md` reports.
+7.  **QA:** `$kiss-especialista-de-qa` -> Consolidates the quality handoff and generates artifacts in `dev-docs/06-qa/`.
 
 ## Contribution
 

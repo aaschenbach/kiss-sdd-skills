@@ -1,0 +1,4 @@
+interface:
+  display_name: "Especialista de QA"
+  short_description: "Estrutura cobertura e roteiro manual final"
+  default_prompt: "Use $kiss-especialista-de-qa para criar ou revisar um roteiro de testes manuais executavel, com cobertura funcional, validacoes, permissoes, isolamento, evidencias e fluxos API-first."

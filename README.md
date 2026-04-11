@@ -10,7 +10,7 @@
 
 [English Version (README.en.md)](README.en.md)
 
-Coleção de skills para IA que automatizam o ciclo de vida de produto (Discovery -> Arquitetura -> Execução) seguindo o princípio **KISS (Keep It Simple, Stupid)**.
+Coleção de skills para IA que automatizam o ciclo de vida de produto (Discovery -> Arquitetura -> Execução -> QA) seguindo o princípio **KISS (Keep It Simple, Stupid)**.
 
 ## Funcionalidades
 
@@ -20,6 +20,7 @@ Coleção de skills para IA que automatizam o ciclo de vida de produto (Discover
 - **Gestão de Backlog:** Cria e prioriza épicos, histórias e boards Kanban (`$kiss-backlog-de-produto`).
 - **Detalhamento de Tarefas:** Decompõe histórias em tarefas técnicas executáveis (`$kiss-detalhador-de-tarefas`).
 - **Execução de Entrega:** Implementa código com rastreabilidade e relatórios automáticos (`$kiss-executor-de-entrega`).
+- **Qualidade e QA:** Consolida cobertura e roteiros de testes manuais executáveis (`$kiss-especialista-de-qa`).
 - **Orquestração:** Coordena o fluxo ponta a ponta entre todas as skills (`$kiss-orquestrador-de-produto`).
 
 ## Tecnologias
@@ -138,6 +139,7 @@ O ciclo de vida ideal segue esta sequência:
 4.  **Planejamento:** `$kiss-backlog-de-produto` -> Cria o `backlog.md` e o `kanban.md`.
 5.  **Refinamento:** `$kiss-detalhador-de-tarefas` -> Cria arquivos de detalhamento `FXXTYY.md`.
 6.  **Implementação:** `$kiss-executor-de-entrega` -> Executa tarefas e gera relatórios `.execution.md`.
+7.  **QA:** `$kiss-especialista-de-qa` -> Consolida o handoff de qualidade e gera roteiros em `dev-docs/06-qa/`.
 
 ## Contribuição
 

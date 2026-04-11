@@ -34,7 +34,8 @@ O repositorio representa este fluxo:
 4. `kiss-backlog-de-produto`
 5. `kiss-detalhador-de-tarefas`
 6. `kiss-executor-de-entrega`
-7. `kiss-orquestrador-de-produto` como coordenador do fluxo ponta a ponta
+7. `kiss-especialista-de-qa`
+8. `kiss-orquestrador-de-produto` como coordenador do fluxo ponta a ponta
 
 Ao alterar uma skill, preserve compatibilidade com esse encadeamento.
 

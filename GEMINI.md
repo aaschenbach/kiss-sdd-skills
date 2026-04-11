@@ -56,6 +56,7 @@ The "KISS" workflow implements a staged product lifecycle pipeline:
 | Backlog | `kiss-backlog-de-produto` | `dev-docs/03-backlog/` |
 | Task breakdown | `kiss-detalhador-de-tarefas` | `dev-docs/04-tarefas/FXXTYY-slug.md` |
 | Execution | `kiss-executor-de-entrega` | `dev-docs/05-execucao/FXXTYY-slug.execution.md` |
+| QA | `kiss-especialista-de-qa` | `dev-docs/06-qa/` |
 | Full orchestration | `kiss-orquestrador-de-produto` | All of the above |
 
 ### Standardized Paths & Formats

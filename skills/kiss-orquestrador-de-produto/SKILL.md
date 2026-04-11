@@ -1,6 +1,6 @@
 ---
 name: kiss-orquestrador-de-produto
-description: "Orquestra o fluxo completo da ideia inicial ate o planejamento de execucao. Use quando o usuario quiser conduzir, em sequencia, discovery de produto, PRD, arquitetura tecnica, backlog priorizado e detalhamento de tarefas, aproveitando como base os skills kiss-estrategista-de-produto, kiss-arquiteto-de-sistemas, kiss-backlog-de-produto e kiss-detalhador-de-tarefas."
+description: "Orquestra o fluxo completo da ideia inicial ate execucao e handoff de QA. Use quando o usuario quiser conduzir, em sequencia, discovery de produto, PRD, arquitetura tecnica, backlog priorizado, detalhamento de tarefas, execucao e validacao de qualidade, aproveitando como base os skills kiss-estrategista-de-produto, kiss-arquiteto-de-sistemas, kiss-backlog-de-produto, kiss-detalhador-de-tarefas, kiss-executor-de-entrega e kiss-especialista-de-qa."
 ---
 
 # Orquestrador de Produto
@@ -17,6 +17,7 @@ Use como convencao padrao de artefatos na raiz do projeto:
 - `dev-docs/03-backlog/`
 - `dev-docs/04-tarefas/`
 - `dev-docs/05-execucao/`
+- `dev-docs/06-qa/`
 
 Ao final de cada fase, informe explicitamente ao usuario onde os arquivos foram criados ou atualizados, com caminho e nome.
 
@@ -25,7 +26,7 @@ Ao final de cada fase, informe explicitamente ao usuario onde os arquivos foram 
 - Descubra ou confirme cedo a lingua principal do sistema e da documentacao e propague essa decisao entre as fases; se faltar, trate como lacuna de handoff.
 - Siga essa mesma lingua ao sugerir mensagens de commit ao fim das fases, salvo instrucao explicita em contrario.
 - Crie `AGENTS.md` na raiz do projeto se ele nao existir e mantenha `AGENTS.md` e `README.md` atualizados sempre que qualquer fase alterar escopo, arquitetura, setup, fluxo, convencoes ou orientacoes de uso que precisem permanecer acessiveis.
-- Trate `kiss-posicionamento-de-marca` como extensao opcional apos o PRD ou em momento posterior, sem bloquear arquitetura, backlog, detalhamento ou execucao.
+- Trate `kiss-posicionamento-de-marca` como extensao opcional apos o PRD ou em momento posterior, sem bloquear arquitetura, backlog, detalhamento, execucao ou QA.
 - Quando o fluxo abrir uma nova frente relevante, oriente sincronizar a `main` local com `git pull`, criar branch curta por trabalho e abrir PR para `main` ao fim do pacote validado.
 - Ao encerrar cada fase, sugira mensagens de commit objetivas para os artefatos criados ou revisados.
 - Antes de liberar avancar para a fase seguinte, instrua o usuario a revisar, validar artefatos e executar testes ou checks aplicaveis daquela fase.
@@ -117,7 +118,19 @@ Por padrao, detalhe apenas:
 
 Evite detalhar tudo cedo demais.
 
-### 7. Consolidar o handoff
+### 7. Executar QA e handoff final
+
+Quando houver implementacao pronta ou pacote validavel, conduza a etapa usando o skill `kiss-especialista-de-qa`.
+
+Objetivo desta fase:
+- consolidar ambiente, massa e evidencias de validacao
+- produzir roteiro manual final ou revisao de cobertura QA
+- reconciliar backlog, `kanban.md` e relatorios `.execution.md` com o estado real da validacao
+- preparar handoff final de qualidade sem inventar comportamento nao implementado
+
+Nao trate QA como etapa abstrata. Se houver entrega validavel, transforme isso em artefato executavel.
+
+### 8. Consolidar o handoff
 
 Ao fim de cada fase, deixe claro:
 - o que foi produzido
@@ -145,8 +158,8 @@ Use [handoff-checklist.md](./references/handoff-checklist.md) para checar sufici
 
 - Flow assessment: diagnostico do estado atual e proxima etapa recomendada.
 - Phase execution: execucao de uma fase especifica.
-- Full orchestration: sequencia completa ate backlog ou detalhamento inicial.
-- MVP execution pack: backlog e detalhamento dos itens centrais do MVP.
+- Full orchestration: sequencia completa ate execucao e handoff de QA.
+- MVP execution pack: backlog, detalhamento, execucao e QA dos itens centrais do MVP.
 
 ## Document Convention
 
@@ -157,6 +170,7 @@ Use [handoff-checklist.md](./references/handoff-checklist.md) para checar sufici
 - Board operacional: `dev-docs/03-backlog/kanban.md`
 - Tarefas: `dev-docs/04-tarefas/`
 - Execucao: `dev-docs/05-execucao/`
+- QA: `dev-docs/06-qa/`
 - Crie `AGENTS.md` se estiver ausente e atualize `AGENTS.md` e `README.md` quando qualquer fase mudar informacoes estruturais, operacionais ou de uso
 - Quando a mudanca for relevante, recomende sincronizar a `main`, usar branch dedicada e abrir PR para `main` no handoff final
 - Ao concluir qualquer fase, explicite validacoes pendentes antes do avancar
@@ -167,7 +181,7 @@ Use [handoff-checklist.md](./references/handoff-checklist.md) para checar sufici
 
 Use este skill principalmente em pedidos como:
 - "Quero seguir da ideia ate o planejamento de execucao"
-- "Conduza todo o fluxo de produto, arquitetura e backlog"
+- "Conduza todo o fluxo de produto, arquitetura, entrega e QA"
 - "Use os artefatos existentes e avance para as proximas etapas"
 
 ## References

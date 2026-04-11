@@ -1,4 +1,4 @@
 interface:
   display_name: "Orquestrador de Produto"
-  short_description: "Coordena discovery ate entrega"
-  default_prompt: "Use $kiss-orquestrador-de-produto para conduzir discovery, arquitetura, backlog e detalhamento de execucao a partir de uma ideia inicial."
+  short_description: "Coordena discovery ate QA"
+  default_prompt: "Use $kiss-orquestrador-de-produto para conduzir discovery, arquitetura, backlog, execucao e handoff de QA a partir de uma ideia inicial."
