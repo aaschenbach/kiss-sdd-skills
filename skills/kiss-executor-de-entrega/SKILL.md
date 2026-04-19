@@ -25,7 +25,7 @@ Ao finalizar, informe explicitamente ao usuario quais arquivos foram criados ou 
 - Preserve a lingua definida para sistema e documentacao tambem nos artefatos produzidos durante a execucao; se isso estiver ambiguo, registre a lacuna antes de seguir.
 - Siga essa mesma lingua ao sugerir mensagens de commit, salvo instrucao explicita em contrario.
 - Crie `AGENTS.md` na raiz do projeto se ele nao existir e mantenha `AGENTS.md` e `README.md` atualizados sempre que a implementacao alterar setup, execucao, ambiente, comandos, fluxos operacionais, troubleshooting ou convencoes relevantes para quem vai manter o projeto.
-- Antes de iniciar uma nova frente relevante, verifique se o projeto utiliza controle de versionamento (Git); em caso positivo, **garanta** a sincronizacao da `main` local com `git pull` e a criacao de uma branch curta de trabalho (ex: `task/FXXTYY-slug`) para isolar as mudancas.
+- Antes de iniciar uma nova frente relevante, verifique se o projeto utiliza controle de versionamento (Git); em caso positivo, realize o **Checklist de Segurança Git** (ver Workflow 0). Se o ambiente não estiver limpo (não estiver na `main`, houver outros branches, PRs abertas ou falta de sync), **avise o usuário, detalhe o status e peça autorização** antes de seguir para a criação da branch de trabalho `task/FXXTYY-slug`.
 - Se o Git nao estiver presente, ignore os passos de versionamento e siga com a execucao local direta.
 - Ao encerrar cada rodada ou pacote seguro de execucao, sugira mensagens de commit objetivas alinhadas ao que foi implementado.
 - Antes de seguir para a proxima tarefa ou fase, instrua o usuario a executar os testes e validacoes aplicaveis, ou valide voce mesmo quando estiver no escopo da execucao.
@@ -55,14 +55,29 @@ Se o usuario ja especificou um item de backlog mas nao o modo, use `guiado`.
 
 ## Workflow
 
-### 0. Preparar Git (Sync & Branch)
+### 0. Preparar Git e Sincronização
 
-Antes de qualquer acao, verifique se o ambiente utiliza Git (ex: `git rev-parse --is-inside-work-tree`).
-- Se houver Git:
-    - Sincronize com a branch principal (`git checkout main && git pull`).
-    - Crie ou mova para uma branch de trabalho (ex: `git checkout -b task/FXXTYY-slug`).
-- Se nao houver Git:
-    - Continue a execucao diretamente no sistema de arquivos local.
+Antes de qualquer ação, verifique se o ambiente utiliza Git (ex: `git rev-parse --is-inside-work-tree`).
+
+Se houver Git, você DEVE garantir um estado limpo e sincronizado realizando o **Checklist de Segurança Git**:
+1. **Branch Atual:** Identifique a branch atual (`git branch --show-current`).
+2. **Outros Branches:** Liste branches locais e remotos (`git branch -a`).
+3. **Pull Requests:** Verifique PRs abertas (ex: `gh pr list` se disponível).
+4. **Sincronização (Push/Pull):** Verifique se a `main` local está pareada com a remota (`git fetch` e `git status`).
+
+**Ação Obrigatória:**
+Se ocorrer uma ou mais das condições abaixo, **AVISE o usuário, detalhe o status de cada checagem e PEÇA AUTORIZAÇÃO** para continuar:
+- A branch atual não é a `main`.
+- Existem branches adicionais (locais ou remotos) além da `main`.
+- Existem Pull Requests abertas.
+- Existe pendência de `push` ou `pull`.
+
+Se o ambiente estiver limpo ou após a autorização do usuário:
+- Sincronize com a branch principal (`git checkout main && git pull`).
+- Crie ou mova para uma branch de trabalho curta (ex: `git checkout -b task/FXXTYY-slug`).
+
+Se não houver Git:
+- Continue a execução diretamente no sistema de arquivos local.
 
 ### 1. Validar os insumos
 
@@ -196,7 +211,7 @@ Use [execution-workflow.md](./references/execution-workflow.md) para decidir se 
 - Um relatorio acumulativo por item, no formato `FXXTYY-slug-do-item.execution.md`
 - Quando houver `kanban.md`, atualize-o junto com o relatorio de execucao
 - Crie `AGENTS.md` se estiver ausente e atualize `AGENTS.md` e `README.md` quando necessario, registrando isso no relatorio de execucao
-- Quando o Git for detectado, **garanta** a sincronizacao da `main` no inicio e o uso de branch dedicada.
+- Quando o Git for detectado, realize o **Checklist de Segurança Git** e garanta sincronização/autorização antes de criar a branch dedicada.
 - Ao concluir a execucao em ambiente Git, abra Pull Request para `main` (se autorizado pelo usuario) apos a validacao final do item ou pacote de tarefas.
 - Ao concluir, deixe explicito quais testes e validacoes foram executados e quais ainda precisam ser rodados pelo usuario
 - Ao concluir, sugira mensagens de commit para codigo, documentacao e relatorio quando aplicavel
