@@ -17,10 +17,24 @@ Use este material para executar com seguranca a partir de um item detalhado.
 
 Verifique se o projeto utiliza Git (ex: `git rev-parse --is-inside-work-tree`).
 
-**Se houver Git:**
-1. Sincronize: `git checkout main && git pull`
-2. Prepare Branch: `git checkout -b task/FXXTYY-slug`
-   - Se estiver executando multiplas tarefas, use uma branch unica para o conjunto.
+**Se houver Git, realize o Checklist de Seguranca Git:**
+
+1. **Branch Atual:** Identifique a branch atual (`git branch --show-current`).
+2. **Outros Branches:** Liste branches locais e remotos (`git branch -a`).
+3. **Pull Requests:** Verifique PRs abertas (ex: `gh pr list` se disponivel).
+4. **Sincronizacao (Push/Pull):** Verifique se a `main` local esta pareada com a remota (`git fetch` e `git status`).
+
+**Acao Obrigatoria:**
+Se ocorrer uma ou mais das condicoes abaixo, **AVISE o usuario, detalhe o status de cada checagem e PECA AUTORIZACAO** para continuar:
+- A branch atual nao e a `main`.
+- Existem branches adicionais (locais ou remotos) alem da `main`.
+- Existem Pull Requests abertas.
+- Existe pendencia de `push` ou `pull`.
+
+Se o ambiente estiver limpo ou apos a autorizacao do usuario:
+- Sincronize: `git checkout main && git pull`
+- Prepare Branch: `git checkout -b task/FXXTYY-slug`
+  - Se estiver executando multiplas tarefas, use uma branch unica para o conjunto.
 
 **Se nao houver Git:**
 - Ignore este passo e continue a execucao local direta.

@@ -141,6 +141,28 @@ O ciclo de vida ideal segue esta sequência:
 6.  **Implementação:** `$kiss-executor-de-entrega` -> Executa tarefas e gera relatórios `.execution.md`.
 7.  **QA:** `$kiss-especialista-de-qa` -> Consolida o handoff de qualidade e gera roteiros em `dev-docs/06-qa/`.
 
+## Revisão de Qualidade dos Skills (2026-07-24)
+
+Revisão técnica completa realizada por Claude Code como engenheiro de software. As seguintes correções foram aplicadas:
+
+### Problemas corrigidos
+
+| # | Severidade | Arquivo | Descrição |
+|---|-----------|---------|-----------|
+| 1 | Alta | `kiss-executor-de-entrega/references/execution-workflow.md` | Sincronizado com o Checklist de Segurança Git completo do SKILL.md, incluindo as 4 verificações obrigatórias e exigência de autorização do usuário antes de criar branch. |
+| 2 | Alta | `kiss-orquestrador-de-produto/references/handoff-checklist.md` | Adicionadas as seções 5 (Detalhamento→Execução) e 6 (Execução→QA) que estavam ausentes, completando os gates de suficiência do pipeline. |
+| 3 | Alta | `kiss-orquestrador-de-produto/SKILL.md` | Adicionado passo 7 explícito de execução com `kiss-executor-de-entrega`, que estava ausente do fluxo orquestrado. O orquestrador agora cobre de discovery até QA sem lacunas. |
+| 4 | Média | `kiss-posicionamento-de-marca/SKILL.md` | Adicionada declaração explícita da posição do skill no fluxo (após PRD, não bloqueia arquitetura ou fases seguintes), eliminando ambiguidade sobre quando acioná-lo. |
+| 5 | Média | `kiss-detalhador-de-tarefas/SKILL.md` | Triggers atualizados para incluir referência explícita ao formato `FXXTYY-slug`, tornando a invocação mais precisa e rastreável. |
+| 6 | Média | `kiss-especialista-de-qa/SKILL.md` | Adicionada seção de orientação sobre integração com testes automatizados existentes, definindo quando o roteiro manual complementa ou simplifica a cobertura automatizada. |
+
+### O que não foi alterado
+
+- Estrutura de pastas e contratos de artefatos (`FXXTYY-slug`, `kanban.md`, `execution.md`) — estão corretos.
+- Templates de referência (`prd-template.md`, `task-template.md`, `execution-report-template.md`, `solution-template.md`) — adequados.
+- Regras Transversais e Document Conventions dos skills — coerentes entre si.
+- Propagação de língua, segurança e privacidade ao longo do pipeline — bem implementada.
+
 ## Contribuição
 
 1. Sincronize sempre com a `main` antes de iniciar (`git pull`).

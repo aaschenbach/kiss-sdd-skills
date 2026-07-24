@@ -141,6 +141,28 @@ The ideal lifecycle follows this sequence:
 6.  **Implementation:** `$kiss-executor-de-entrega` -> Executes tasks and generates `.execution.md` reports.
 7.  **QA:** `$kiss-especialista-de-qa` -> Consolidates the quality handoff and generates artifacts in `dev-docs/06-qa/`.
 
+## Skills Quality Review (2026-07-24)
+
+Full technical review conducted by Claude Code as a software engineer. The following corrections were applied:
+
+### Issues fixed
+
+| # | Severity | File | Description |
+|---|----------|------|-------------|
+| 1 | High | `kiss-executor-de-entrega/references/execution-workflow.md` | Synchronized with the full Git Safety Checklist from SKILL.md, including all 4 mandatory verifications and the requirement for user authorization before creating a branch. |
+| 2 | High | `kiss-orquestrador-de-produto/references/handoff-checklist.md` | Added missing sections 5 (Breakdown→Execution) and 6 (Execution→QA), completing the pipeline sufficiency gates. |
+| 3 | High | `kiss-orquestrador-de-produto/SKILL.md` | Added explicit step 7 for execution using `kiss-executor-de-entrega`, which was missing from the orchestrated flow. The orchestrator now covers from discovery to QA without gaps. |
+| 4 | Medium | `kiss-posicionamento-de-marca/SKILL.md` | Added explicit declaration of the skill's position in the flow (after PRD, does not block architecture or subsequent phases), removing ambiguity about when to invoke it. |
+| 5 | Medium | `kiss-detalhador-de-tarefas/SKILL.md` | Triggers updated to include explicit reference to the `FXXTYY-slug` format, making invocation more precise and traceable. |
+| 6 | Medium | `kiss-especialista-de-qa/SKILL.md` | Added guidance section on integration with existing automated tests, defining when the manual script complements or simplifies automated coverage. |
+
+### What was not changed
+
+- Artifact folder structure and contracts (`FXXTYY-slug`, `kanban.md`, `execution.md`) — correct as-is.
+- Reference templates (`prd-template.md`, `task-template.md`, `execution-report-template.md`, `solution-template.md`) — adequate.
+- Transversal Rules and Document Conventions across skills — coherent with each other.
+- Language, security, and privacy propagation throughout the pipeline — well implemented.
+
 ## Contribution
 
 1. Always sync with `main` before starting (`git pull`).

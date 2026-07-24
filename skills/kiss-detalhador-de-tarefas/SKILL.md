@@ -166,9 +166,11 @@ Quando o item estiver detalhado, com dependencias de execucao suficientemente cl
 ## Assumed Triggers
 
 Use este skill principalmente em pedidos como:
-- "Detalhe as tarefas dessa historia"
-- "Quebre esse item de backlog em tarefas tecnicas"
+- "Detalhe as tarefas do item F02T01-cadastro-e-login"
+- "Quebre o item F01T03-autenticacao em tarefas tecnicas"
 - "Prepare a implementacao dessa feature com testes e DoD"
+- "Crie o arquivo de detalhamento para o item FXXTYY-slug"
+- "Detalhe a proxima historia do backlog pronta para implementacao"
 
 ## References
 
