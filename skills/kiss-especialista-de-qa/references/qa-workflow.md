@@ -12,7 +12,7 @@ Transformar implementacao real e artefatos tecnicos existentes em um pacote de Q
 - relatorio `.execution.md` ou diff recente da entrega
 - rotas web e API implementadas
 - telas, templates e fluxos reais
-- testes automatizados relevantes
+- testes automatizados relevantes (incluindo specs Playwright em `*.spec.ts`, `*.spec.js`, `tests/` ou `e2e/` quando presentes)
 - documentacao operacional do ambiente
 
 ## 3. Regras obrigatorias
@@ -133,7 +133,16 @@ Antes de concluir:
 - conferir se erros, permissao e isolamento foram cobertos
 - conferir se as evidencias esperadas estao explicitas
 
-## 12. Integracao com o fluxo KISS
+## 12. Integracao com Playwright (opcional)
+
+Se o projeto usar Playwright:
+1. Execute `npx playwright test` como parte da preparacao do ambiente, quando aplicavel.
+2. Leia os specs existentes para mapear o que ja esta coberto automaticamente.
+3. Priorize no roteiro manual os fluxos **nao cobertos** pelos specs: cenarios de borda, permissoes por perfil, comportamentos de sessao, uploads, fluxos multi-aba.
+4. Para fluxos cobertos por specs confiaveis, o roteiro manual pode ser reduzido a uma verificacao complementar superficial.
+5. Ao fim do roteiro, inclua uma secao opcional "Candidatos a automacao Playwright" listando fluxos criticos sem spec.
+
+## 13. Integracao com o fluxo KISS
 
 - Consumir artefatos de `dev-docs/01-produto/` a `dev-docs/05-execucao/` quando existirem.
 - Produzir artefatos de QA em `dev-docs/06-qa/`.

@@ -118,7 +118,21 @@ Por padrao, detalhe apenas:
 
 Evite detalhar tudo cedo demais.
 
-### 7. Executar QA e handoff final
+### 7. Executar implementacao
+
+Quando houver itens marcados como `ready` no `kanban.md`, conduza a etapa usando o skill `kiss-executor-de-entrega`.
+
+Objetivo desta fase:
+- realizar o Checklist de Seguranca Git e obter autorizacao do usuario antes de criar a branch de trabalho
+- executar as tarefas do item em ordem, uma por vez por padrao
+- atualizar `kanban.md` para `in_progress` ao iniciar e para `review` ao concluir
+- registrar cada rodada no relatorio `FXXTYY-slug-do-item.execution.md`
+- validar cada tarefa antes de avancar para a proxima
+- abrir Pull Request para `main` ao concluir e validar o item ou pacote (se autorizado pelo usuario)
+
+Nao inicie execucao se o item ainda nao estiver com status `ready` ou se o Checklist de Seguranca Git revelar estado inconsistente sem autorizacao explicita do usuario.
+
+### 8. Executar QA e handoff final
 
 Quando houver implementacao pronta ou pacote validavel, conduza a etapa usando o skill `kiss-especialista-de-qa`.
 
@@ -127,10 +141,11 @@ Objetivo desta fase:
 - produzir roteiro manual final ou revisao de cobertura QA
 - reconciliar backlog, `kanban.md` e relatorios `.execution.md` com o estado real da validacao
 - preparar handoff final de qualidade sem inventar comportamento nao implementado
+- quando o projeto usar Playwright ou outra suite de testes E2E, verificar cobertura existente antes de escrever roteiro manual e identificar fluxos nao cobertos como prioridade do roteiro
 
 Nao trate QA como etapa abstrata. Se houver entrega validavel, transforme isso em artefato executavel.
 
-### 8. Consolidar o handoff
+### 9. Consolidar o handoff
 
 Ao fim de cada fase, deixe claro:
 - o que foi produzido

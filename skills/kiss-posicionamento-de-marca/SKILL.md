@@ -17,6 +17,7 @@ Crie os artefatos desta etapa, por padrao, em `dev-docs/01-produto/` na raiz do 
 
 - Reutilize a lingua definida no PRD para narrativa, exemplos e artefatos de marca; se a lingua do sistema ou da documentacao estiver ausente, trate isso como lacuna de entrada.
 - Siga essa mesma lingua ao sugerir mensagens de commit, salvo instrucao explicita em contrario.
+- Esta etapa e opcional e nao bloqueia nenhuma outra fase do pipeline KISS. A posicao recomendada no fluxo e apos o PRD (`kiss-estrategista-de-produto`) e antes ou em paralelo com a arquitetura (`kiss-arquiteto-de-sistemas`). Pode ser acionada em qualquer momento posterior sem prejuizo ao backlog, detalhamento ou execucao.
 - Trate esta etapa como opcional e nao como gate para `kiss-arquiteto-de-sistemas`, `kiss-backlog-de-produto` ou `kiss-detalhador-de-tarefas`.
 - Crie `AGENTS.md` na raiz do projeto se ele nao existir e mantenha `AGENTS.md` e `README.md` atualizados sempre que a etapa alterar fluxo, artefatos, convencoes de handoff ou instrucoes duradouras.
 - Quando a mudanca abrir nova frente relevante no repositorio, oriente sincronizar a `main` local com `git pull`, criar branch curta e preparar PR para `main` ao fim da validacao.

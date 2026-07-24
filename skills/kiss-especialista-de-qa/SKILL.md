@@ -95,6 +95,23 @@ Antes de concluir, revise:
 
 Use [test-flow-template.md](./references/test-flow-template.md) para consolidar a saida final.
 
+## Orientacao sobre Testes Automatizados
+
+Este skill e focado em roteiro de testes manuais executaveis. Se o projeto ja possuir suite de testes automatizados:
+- Leia os testes existentes antes de escrever o roteiro manual para evitar duplicar cobertura ja garantida.
+- Identifique quais fluxos criticos nao tem cobertura automatizada e priorize-os no roteiro manual.
+- Quando um fluxo estiver coberto por testes automatizados confiaveis, mencione explicitamente no roteiro que a validacao manual e complementar e pode ser simplificada.
+- Se houver lacunas evidentes na suite automatizada (fluxos criticos sem testes), registre como recomendacao de melhoria ao fim do roteiro — mas nao bloqueie o handoff de QA por isso.
+- Nao assuma que testes automatizados existem. Se nao houver evidencia, trate o roteiro manual como cobertura principal.
+
+### Playwright (opcional, quando presente)
+
+Se o projeto usar Playwright:
+- Verifique os arquivos de spec existentes (`*.spec.ts`, `*.spec.js`, `tests/` ou `e2e/`) antes de escrever o roteiro.
+- Para fluxos cobertos por specs Playwright executando de forma confivel, o roteiro manual pode focar em cenarios de borda, permissoes e fluxos que o E2E nao cobre bem (ex: uploads, fluxos multi-aba, comportamentos de sessao).
+- Quando identificar um fluxo critico sem spec Playwright, sinalize como candidato a automacao no fim do roteiro.
+- Sugira rodar `npx playwright test` como parte da preparacao do ambiente de QA, quando aplicavel.
+
 ## Interaction Rules
 
 - Produza roteiro operacional, nao plano de teste abstrato, salvo instrucao explicita do usuario.

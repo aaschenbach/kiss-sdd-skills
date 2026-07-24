@@ -68,6 +68,41 @@ Bloqueios tipicos:
 - backlog sem corte de MVP
 - falta de prioridade ou dependencia
 
+## 5. Detalhamento -> Execucao
+
+Pode avancar quando houver, no minimo:
+- arquivo `FXXTYY-slug-do-item.md` criado para o item
+- tarefas `T1`, `T2`, `T3` definidas com objetivo, dependencias e criterio de conclusao claro
+- DoD explicito
+- testes e verificacoes esperados descritos por tarefa
+- impacto de seguranca e privacidade refletido em tarefas ou checks obrigatorios
+- sequencia de implementacao definida
+- item marcado como `ready` no `kanban.md`
+- ambiente Git preparado: branch de trabalho `task/FXXTYY-slug` criada apos Checklist de Seguranca Git e autorizacao quando necessario
+
+Bloqueios tipicos:
+- item ainda vago demais para implementar
+- dependencias tecnicas nao resolvidas
+- tarefa sem criterio claro de conclusao
+- ambiente Git sujo ou branch errada sem autorizacao do usuario
+
+## 6. Execucao -> QA
+
+Pode avancar quando houver, no minimo:
+- relatorio `FXXTYY-slug-do-item.execution.md` com todas as tarefas registradas
+- todas as tarefas criticas com status `done` ou desvio explicitamente registrado e aceito
+- item marcado como `review` ou `done` no `kanban.md`
+- validacoes funcionais executadas e documentadas no relatorio
+- checks de seguranca e privacidade executados
+- Pull Request aberto para `main` (se o ambiente usar Git e o usuario tiver autorizado)
+- implementacao real acessivel para o QA (ambiente subivel, seeds disponiveis, rotas conhecidas)
+
+Bloqueios tipicos:
+- tarefas criticas ainda pendentes ou bloqueadas
+- desvios de plano nao registrados
+- ambiente nao reproduzivel para o testador
+- ausencia de dados ou seeds suportados para montar massa base
+
 ## Estrutura de decisao recomendada
 
 Ao final de cada fase, conclua com:
